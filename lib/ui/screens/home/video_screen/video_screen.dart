@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:whatsappstatusdownloader/ui/screens/home/video_screen/video_view.dart';
 
 
 class VideoScreen extends StatelessWidget {
@@ -25,10 +27,15 @@ class VideoScreen extends StatelessWidget {
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
           children: List.generate(10, (index){
-            return Container(
-              decoration: const BoxDecoration(
-                  color: Colors.blueAccent,
-                  borderRadius: BorderRadius.all(Radius.circular(10))
+            return GestureDetector(
+              onTap: (){
+                Navigator.push (context, CupertinoPageRoute(builder: (context)=> const VideoView()));
+              },
+              child: Container(
+                decoration: const BoxDecoration(
+                    color: Colors.blueAccent,
+                    borderRadius: BorderRadius.all(Radius.circular(10))
+                ),
               ),
             );
           }),

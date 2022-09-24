@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:whatsappstatusdownloader/ui/screens/home/image_screen/image_view.dart';
 
 class ImageScreen extends StatelessWidget {
   const ImageScreen({Key? key}) : super(key: key);
@@ -25,10 +26,15 @@ class ImageScreen extends StatelessWidget {
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
           children: List.generate(10, (index){
-            return Container(
-              decoration: const BoxDecoration(
-                color: Colors.green,
-                borderRadius: BorderRadius.all(Radius.circular(10))
+            return GestureDetector(
+              onTap: (){
+                Navigator.push (context, CupertinoPageRoute(builder: (context)=> const ImageView()));
+              },
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.all(Radius.circular(10))
+                ),
               ),
             );
           }),
