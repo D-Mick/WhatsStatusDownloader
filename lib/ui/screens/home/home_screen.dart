@@ -20,6 +20,8 @@ class HomeScreen extends StatelessWidget {
           backgroundColor: Colors.white,
           body: pages[nav.currentPageIndex],
           bottomNavigationBar: BottomNavigationBar(
+              selectedItemColor: Colors.white,
+              backgroundColor: const Color(0xff646478),
               onTap: (value){
                 nav.changeCurrentIndex(value);
               },

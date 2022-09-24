@@ -10,6 +10,16 @@ class ImageScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Container(
         padding: const EdgeInsets.all(20),
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment(0.8, 0.0),
+            colors: <Color>[
+              Color(0xff3A3A4C),
+              Color(0xff272636),
+            ],
+          ),
+        ),
         child: GridView.count(
           crossAxisCount: 2,
           mainAxisSpacing: 10,
