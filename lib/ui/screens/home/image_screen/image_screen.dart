@@ -1,9 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:whatsappstatusdownloader/core/viewmodel/getStatus/get_status_viewmodel_provider.dart';
 import 'package:whatsappstatusdownloader/ui/screens/home/image_screen/image_view.dart';
 
-class ImageScreen extends StatelessWidget {
+class ImageScreen extends StatefulWidget {
   const ImageScreen({Key? key}) : super(key: key);
+
+  @override
+  State<ImageScreen> createState() => _ImageScreenState();
+}
+
+class _ImageScreenState extends State<ImageScreen> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Provider.of<GetStatusViewModelProvider>(context, listen: false).getAllStatus();
+  }
 
   @override
   Widget build(BuildContext context) {

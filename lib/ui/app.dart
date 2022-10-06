@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:whatsappstatusdownloader/core/viewmodel/getStatus/get_status_viewmodel_provider.dart';
 import 'package:whatsappstatusdownloader/core/viewmodel/home_viewmodel/home_viewmodel.dart';
 import 'package:whatsappstatusdownloader/ui/screens/splash/splash_screen.dart';
 
@@ -11,6 +12,7 @@ class StatusDownloader extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(providers:  [
       ChangeNotifierProvider(create: (_)=> HomeViewModelProvider()),
+      ChangeNotifierProvider(create: (_)=> GetStatusViewModelProvider()),
     ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
